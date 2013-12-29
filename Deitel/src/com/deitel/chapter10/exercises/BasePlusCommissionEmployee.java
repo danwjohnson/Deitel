@@ -10,9 +10,10 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
     
     // six argument constructor
     public BasePlusCommissionEmployee(String first, String last, String ssn,
+    		int month, int day, int year,
             double sales, double rate, double salary) {
         
-        super(first, last, ssn, sales, rate);
+        super(first, last, ssn, month, day, year, sales, rate);
         setBaseSalary(salary);
         
     } // end constructor
@@ -36,8 +37,8 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
     
     // calculate earnings
     public double earnings() {
-        
-        return getBaseSalary() + super.earnings();
+
+    	return getBaseSalary() + super.earnings();
         
     } // end method earnings
     

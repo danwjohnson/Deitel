@@ -1,6 +1,10 @@
 // Fig. 10.9: PayrollSystemTest.java
 // Employee hierarchy test program
+//
+// Exercise 10.9: Added birthday logic
 package com.deitel.chapter10.exercises;
+
+import java.util.Calendar;
 
 
 public class PayrollSystemTest {
@@ -9,16 +13,16 @@ public class PayrollSystemTest {
         
         // create subclass objects
         SalariedEmployee salariedEmployee = new SalariedEmployee(
-                "John","Smith", "111-11-1111", 800.00);
+                "John","Smith", "111-11-1111", 12, 20, 70, 800.00);
         HourlyEmployee hourlyEmployee = new HourlyEmployee(
-                "Karen", "Price", "222-22-2222", 16.75, 40);
+                "Karen", "Price", "222-22-2222", 2, 22, 99, 16.75, 40);
         CommissionEmployee commissionEmployee = new CommissionEmployee (
-                "Sue", "Jones", "333-33-3333", 10000, .06);
+                "Sue", "Jones", "333-33-3333", 8, 30, 71, 10000, .06);
         BasePlusCommissionEmployee basePlusCommissionEmployee =
                 new BasePlusCommissionEmployee(
-                "Bob", "Lewis", "444-44-4444", 5000, .04, 300);
+                "Bob", "Lewis", "444-44-4444", 6, 18, 74, 5000, .04, 300);
         PieceWorker pieceWorker = new PieceWorker(
-        		"Rachel", "Nicole", "555-55-5555", 10.00, 55);
+        		"Rachel", "Nicole", "555-55-5555", 8, 7, 73, 10.00, 55);
         
         System.out.println("Employees processed individually:\n");
         
@@ -67,9 +71,19 @@ public class PayrollSystemTest {
                 
             } // end if
             
-            System.out.printf(
-                    "earned $%,.2f\n\n", currentEmployee.earnings());
+            // determine whether the current employee has a birthday this month
+           if (Calendar.MONTH == currentEmployee.getBirthMonth()) {
+        	   
+        	   System.out.printf("Happy Birthday!!!  You get $%d\n", 100);
+        	   System.out.printf(
+                       "earned $%,.2f\n\n", currentEmployee.earnings() + 100);
+        	   
+           }else {
             
+        	   System.out.printf(
+        			   "earned $%,.2f\n\n", currentEmployee.earnings());
+           } // end if/else
+           
         } // end for loop
         
         // get type name of each object in employees array

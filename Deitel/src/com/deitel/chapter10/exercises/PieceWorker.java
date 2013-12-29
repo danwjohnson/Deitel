@@ -10,9 +10,10 @@ public class PieceWorker extends Employee {
 	
 	// five argument constructor
 	public PieceWorker(String first, String last, String ssn,
+			int month, int day, int year,
 			double hourlyWage, int piecesMade) {
 		
-		super(first, last, ssn);
+		super(first, last, ssn, month, day, year);
 		setWage(hourlyWage);
 		setPieces(piecesMade);
 		

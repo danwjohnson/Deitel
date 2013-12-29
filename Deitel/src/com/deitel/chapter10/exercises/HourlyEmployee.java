@@ -10,9 +10,10 @@ public class HourlyEmployee extends Employee {
     
     // five argument constructor
     public HourlyEmployee( String first, String last, String ssn,
+    		int month, int day, int year,
             double hourlyWage, double hoursWorked) {
         
-        super(first, last, ssn);
+        super(first, last, ssn, month, day, year);
         setWage(hourlyWage);
         setHours(hoursWorked);
         

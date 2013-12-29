@@ -10,10 +10,11 @@ public class CommissionEmployee extends Employee{
     
     
     // five argument constructor
-    public CommissionEmployee(String first, String last, String ssn, 
+    public CommissionEmployee(String first, String last, String ssn,
+    		int month, int day, int year,
             double sales, double rate) {
         
-        super(first, last, ssn);
+        super(first, last, ssn, month, day, year);
         setGrossSales(sales);
         setCommissionRate(rate);
         

@@ -14,9 +14,9 @@ public class PayableInterfaceTest {
         payableObjects[0] = new Invoice("01234", "seat", 2, 375.00);
         payableObjects[1] = new Invoice("56789", "tire", 4, 79.95);
         payableObjects[2] = new SalariedEmployee(
-                "John", "Smith", "111-11-1111", 800.00);
+                "John", "Smith", "111-11-1111", 2, 22, 99, 800.00);
         payableObjects[3] = new SalariedEmployee(
-                "Lise", "Barnes", "888-88-8888", 1200.00);
+                "Lise", "Barnes", "888-88-8888", 8, 30, 71, 1200.00);
         
         System.out.println(
                 "Invoices and Employees processed polymorphically:\n");
